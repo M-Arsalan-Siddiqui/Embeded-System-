@@ -1,3 +1,9 @@
+//ARDUINO ATMEGA2560
+// 14 PIN IS VCC FOR MAX7219 MODULE 
+// 15 PIN IS GND 
+// 16 PIN DIN pin of MAX7219 module
+// 17 PIN CS pin of MAX7219 module
+// 18 PIN CLK pin of MAX7219 module
 #include <MaxMatrix.h>
 #include <avr/pgmspace.h>
  
@@ -107,8 +113,8 @@ MaxMatrix m(data, load, clock, maxInUse); // define Library
 byte buffer[10];
 char string1[] = " M . A R S A L A N . S I D D I Q U I P - 1 3 3 4 "; // Scrolling Text
 void setup(){
-   pinMode(14,OUTPUT);// FOR VCC
-   pinMode(15,OUTPUT); // FOR GND
+   pinMode(14,OUTPUT);// VCC FOR MAX7219 IC
+   pinMode(15,OUTPUT); // GND FOR MAX7219 IC
    digitalWrite(14,HIGH);
    digitalWrite(15,LOW);
   m.init(); // module MAX7219
